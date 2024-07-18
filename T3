@@ -1,0 +1,28 @@
+const products = [
+    {
+        name: "Laptop",
+        description: "High performance laptop",
+        price: "$999.99",
+        image_url: "https://via.placeholder.com/200"
+    },
+    {
+        name: "Smartphone",
+        description: "Latest model smartphone",
+        price: "$799.99",
+        image_url: "https://via.placeholder.com/200"
+    },
+    // Add more products as needed
+];
+
+const productsDiv = document.getElementById('products');
+products.forEach(product => {
+    const productDiv = document.createElement('div');
+    productDiv.className = 'product';
+    productDiv.innerHTML = `
+        <h2>${product.name}</h2>
+        <p>${product.description}</p>
+        <p>${product.price}</p>
+        <img src="${product.image_url}" alt="${product.name}">
+    `;
+    productsDiv.appendChild(productDiv);
+});
